@@ -8,6 +8,10 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      roman: ["Times New Roman", "serif"],
+      grunge: ["GrungeFest", "cursive"],
+    },
     extend: {
       colors: {
         custom: {
@@ -18,7 +22,7 @@ export default {
       },
       backgroundImage: {
         "custom-radial":
-          "radial-gradient(circle at 50% 140%, rgba(14, 70, 79, 1) 0%, #02191D 55%), url('/path-to-noise-texture.png')",
+          "radial-gradient(circle at 50% 140%, rgba(14, 70, 79, 1) 0%, #02191D 55%)",
         backgroundBlendMode: "overlay",
       },
     },
