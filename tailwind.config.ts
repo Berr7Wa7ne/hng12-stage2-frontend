@@ -11,7 +11,9 @@ export default {
     fontFamily: {
       roman: ["Times New Roman", "serif"],
       grunge: ["GrungeFest", "cursive"],
-    },
+      roadRage: ["Road Rage", "sans-serif"],
+      roboto: ["Roboto", "sans-serif"],
+    },    
     extend: {
       colors: {
         custom: {
