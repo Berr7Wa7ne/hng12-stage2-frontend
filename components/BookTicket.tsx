@@ -3,7 +3,6 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import ProgressBar from "@/components/LineChart";
-import barcode from "../public/barcode.png";
 
 const BookTicket = () => {
   const searchParams = useSearchParams();
@@ -81,7 +80,7 @@ const BookTicket = () => {
               </div>
             </div>
             <Image
-              src={barcode}
+              src="/barcode.png"
               alt="barcode"
               height={500}
               width={500}
