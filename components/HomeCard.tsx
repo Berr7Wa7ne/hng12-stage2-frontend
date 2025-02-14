@@ -40,7 +40,12 @@ const HomeCard = () => {
   return (
     <div className="max-w-lg mx-auto bg-custom-teal bg-opacity-20  border-opacity-20 border border-custom-cyan text-white p-6 rounded-3xl shadow-lg">
       <div className="mt-4">
-        <LineChart />
+        <LineChart
+          title="Ticket Selection"
+          currentStep={1}
+          totalSteps={3}
+          width="100%"
+        />
       </div>
 
       <div className="mt-4 p-4 bg-gradient-to-r from-custom-cyan/20 to-custom-teal/5 rounded-xl text-center border border-opacity-20 border-custom-cyan">
