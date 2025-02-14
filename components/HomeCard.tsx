@@ -12,9 +12,10 @@ import {
 import LineChart from "@/components/LineChart";
 import Link from "next/link";
 
-const TicketSelection = () => {
+const HomeCard = () => {
   const [selectedTicket, setSelectedTicket] = useState<string | null>(null);
-  const [ticketCount, setTicketCount] = useState(1);
+  const [ticketCount, setTicketCount] = useState<number | null>(null);
+  const [error, setError] = useState<string>("");
 
   const tickets = [
     {
@@ -26,6 +27,15 @@ const TicketSelection = () => {
     { type: "VIP", price: "$150", access: "VIP ACCESS", available: "20/52" },
     { type: "VVIP", price: "$150", access: "VVIP ACCESS", available: "20/52" },
   ];
+
+  const handleNextClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!selectedTicket || !ticketCount) {
+      e.preventDefault();
+      setError("Please select a ticket type and number of tickets.");
+    } else {
+      setError("");
+    }
+  };
 
   return (
     <div className="max-w-lg mx-auto bg-custom-teal bg-opacity-20  border-opacity-20 border border-custom-cyan text-white p-6 rounded-3xl shadow-lg">
@@ -90,16 +100,24 @@ const TicketSelection = () => {
         </Select>
       </div>
 
+      {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
+
       <div className="flex flex-col sm:flex-row justify-between mt-6 gap-4 w-full">
         <Button variant="ocx" className="w-full sm:w-1/2">
           <Link href="/">Cancel</Link>
         </Button>
-        <Button variant="berry" className="w-full sm:w-1/2">
-          <Link href="/details">Next</Link>
+        <Button
+          variant="berry"
+          className="w-full sm:w-1/2"
+          onClick={handleNextClick}
+        >
+          <Link href={selectedTicket && ticketCount ? "/details" : "#"}>
+            Next
+          </Link>
         </Button>
       </div>
     </div>
   );
 };
 
-export default TicketSelection;
+export default HomeCard;
