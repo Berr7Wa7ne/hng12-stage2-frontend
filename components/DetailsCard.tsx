@@ -109,6 +109,9 @@ const AttendeeDetails = () => {
       `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
       { method: "POST", body: formData }
     );
+    console.log("Cloudinary Cloud Name:", process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME);
+    console.log("Cloudinary Upload Preset:", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET);
+
     const data = await response.json();
     if (!response.ok) {
       console.error("Cloudinary Error:", data);

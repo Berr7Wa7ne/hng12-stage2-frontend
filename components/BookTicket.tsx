@@ -41,15 +41,15 @@ const BookTicket = () => {
               <p className="">📍 04 Rumens Road, Ikoyi, Lagos</p>
               <p className="">📅 March 15, 2025 | 7:00 PM</p>
             </div>
-            <div className="h-[125px] w-[125px] border-[5px] rounded-2xl border-custom-cyan flex items-center justify-center my-3 mx-auto">
-              <Image
-                src={avatarUrl}
-                alt="Avatar Image"
-                height={120}
-                width={120}
-                className="rounded-xl"
-              />
-            </div>
+            <div className="relative h-[125px] w-[125px] border-[5px] rounded-2xl border-custom-cyan flex items-center justify-center my-3 mx-auto overflow-hidden">
+  <Image
+    src={avatarUrl}
+    alt="Avatar Image"
+    layout="fill"  // Make the image cover the div
+    objectFit="fill"  // Ensures it fills without distortion
+  />
+</div>
+
             <div
               id="table"
               className="border border-custom-cyan p-3 rounded-xl text-left text-[10px] space-y-3 mt-4"
